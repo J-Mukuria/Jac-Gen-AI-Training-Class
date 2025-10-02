@@ -1,4 +1,4 @@
-# todo_ai_interactive_fixed.jac
+# aitest.jac
 import from byllm.llm {Model}
 
 glob llm = Model(model_name="gemini/gemini-2.0-flash", verbose=False);
@@ -19,7 +19,7 @@ with entry:__main__ {
     root ++> Task("Prepare dinner");
     new_task.deadline = suggest_deadline(new_task.description);
     print(f"Task added: {new_task.description} (Deadline suggestion: {new_task.deadline})");
-    # --- list tasks ---
+    # list tasks
     tasks = [root --> Task];
     if not tasks {
         print("No tasks yet!");
